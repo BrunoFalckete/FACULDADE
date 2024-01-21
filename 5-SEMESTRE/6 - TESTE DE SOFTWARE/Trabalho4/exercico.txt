@@ -1,0 +1,186 @@
+1-Leia duas notas bimestrais e informe “aprovado” (media 6,0 ou superior),“exame” entre (3 a 5,9) e “reprovado”(abaixo de 3).
+
+------------------------
+
+**Domínio de Entrada:
+
+Nota do primeiro bimestre (entre 0 e 10).
+Nota do segundo bimestre (entre 0 e 10).
+
+------------------------
+
+**Domínio de Saída:
+
+"Aprovado" se a média das notas for 6,0 ou superior.
+"Exame" se a média das notas estiver entre 3,0 e 5,9.
+"Reprovado" se a média das notas for inferior a 3,0.
+
+------------------------
+
+**Casos de teste:
+
+Nota do primeiro bimestre: 7,0; Nota do segundo bimestre: 8,0.
+Saída esperada: "Aprovado"
+
+Nota do primeiro bimestre: 4,5; Nota do segundo bimestre: 5,5.
+Saída esperada: "Exame"
+
+Nota do primeiro bimestre: 2,0; Nota do segundo bimestre: 3,5.
+Saída esperada: "Reprovado"
+
+Nota do primeiro bimestre: 8,5; Nota do segundo bimestre: 2,5.
+Saída esperada: "Exame"
+
+Nota do primeiro bimestre: 6,0; Nota do segundo bimestre: 6,0.
+Saída esperada: "Aprovado"
+
+------------------------
+
+**Codigo Base:
+
+# Solicita as notas dos dois bimestres ao usuário
+nota_bimestre1 = float(input("Digite a nota do primeiro bimestre: "))
+nota_bimestre2 = float(input("Digite a nota do segundo bimestre: "))
+
+# Calcula a média das notas
+media = (nota_bimestre1 + nota_bimestre2) / 2
+
+# Determina a situação do aluno
+if media >= 6.0:
+    situacao = "Aprovado"
+elif 3.0 <= media < 6.0:
+    situacao = "Exame"
+else:
+    situacao = "Reprovado"
+
+# Exibe a situação
+print(f"Situação do aluno: {situacao}")
+
+****************************************************************************************************************************************
+
+2-Leia uma idade e informe se “menor de idade” (abaixo de 18), “maior de idade” (acima de 18) e “idoso” (acimade 60).
+
+------------------------
+
+**Domínio de Entrada:
+
+Idade da pessoa (um número inteiro).
+
+------------------------
+
+**Domínio de Saída:
+
+"Menor de idade" se a idade for menor que 18.
+"Maior de idade" se a idade for igual ou maior que 18 e menor que 60.
+"Idoso" se a idade for igual ou maior que 60.
+
+------------------------
+
+**Casos de teste:
+
+Idade: 15.
+Saída esperada: "Menor de idade"
+
+Idade: 25.
+Saída esperada: "Maior de idade"
+
+Idade: 70.
+Saída esperada: "Idoso"
+
+Idade: 18.
+Saída esperada: "Maior de idade"
+
+Idade: 59.
+Saída esperada: "Maior de idade"
+
+------------------------
+
+**Codigo Base:
+
+# Solicita a idade ao usuário
+idade = int(input("Digite a idade: "))
+
+# Determina a categoria com base na idade
+if idade < 18:
+    categoria = "Menor de idade"
+elif idade >= 18 and idade < 60:
+    categoria = "Maior de idade"
+else:
+    categoria = "Idoso"
+
+# Exibe a categoria
+print(f"Categoria: {categoria}")
+
+****************************************************************************************************************************************
+
+3-O IMC – Indice de Massa Corporal é um critério da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma
+pessoa adulta.
+
+A fórmula é IMC = peso / ( altura ) 2
+
+Elabore um software que leia o peso e a altura de um adulto e mostre sua condição de acordo com a tabela abaixo
+
+------------------------
+
+**Domínio de Entrada:
+
+Peso da pessoa (em quilogramas).
+Altura da pessoa (em metros).
+
+------------------------
+
+**Domínio de Saída:
+
+"Abaixo do peso" se o IMC for menor que 18,5.
+"Peso normal" se o IMC estiver entre 18,5 e 24,9.
+"Sobrepeso" se o IMC estiver entre 25,0 e 29,9.
+"Obesidade Grau I" se o IMC estiver entre 30,0 e 34,9.
+"Obesidade Grau II" se o IMC estiver entre 35,0 e 39,9.
+"Obesidade Grau III" se o IMC for igual ou superior a 40,0.
+
+------------------------
+
+**Casos de teste:
+
+Peso: 70 kg, Altura: 1,75 m.
+Saída esperada: "Peso normal"
+
+Peso: 60 kg, Altura: 1,65 m.
+Saída esperada: "Peso normal"
+
+Peso: 90 kg, Altura: 1,80 m.
+Saída esperada: "Sobrepeso"
+
+Peso: 110 kg, Altura: 1,75 m.
+Saída esperada: "Obesidade Grau II"
+
+Peso: 130 kg, Altura: 1,80 m.
+Saída esperada: "Obesidade Grau III"
+
+------------------------
+
+**Codigo Base:
+
+# Solicita o peso e a altura ao usuário
+peso = float(input("Digite o peso (em kg): "))
+altura = float(input("Digite a altura (em metros): "))
+
+# Calcula o IMC
+imc = peso / (altura ** 2)
+
+# Determina a condição com base no IMC
+if imc < 18.5:
+    condicao = "Abaixo do peso"
+elif 18.5 <= imc < 25.0:
+    condicao = "Peso normal"
+elif 25.0 <= imc < 30.0:
+    condicao = "Sobrepeso"
+elif 30.0 <= imc < 35.0:
+    condicao = "Obesidade Grau I"
+elif 35.0 <= imc < 40.0:
+    condicao = "Obesidade Grau II"
+else:
+    condicao = "Obesidade Grau III"
+
+# Exibe a condição
+print(f"Condição: {condicao}")

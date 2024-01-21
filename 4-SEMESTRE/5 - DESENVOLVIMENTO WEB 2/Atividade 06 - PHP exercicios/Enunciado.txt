@@ -1,0 +1,5 @@
+Com base na aula de PHP faça os três exercícios seguintes:
+
+A imobiliária Imóbilis vende apenas terrenos retangulares. Faça um programa em PHP que atribua as dimensões de um terreno, calcule e depois exiba a área do terreno.
+Faça um programa em PHP que atribua um número e informe se este número é positivo ou negativo. 
+Faça um programa em PHP que escreva o resultado da soma dos números de 1 a 100.

@@ -1,0 +1,8 @@
+ESTUDO DIRIGIDO
+
+Através do passo a passo do livro de JavaScript faça o exemplo de iRock.
+
+LIVRO:
+
+Use a cabeça Programação JavaScript
+páginas 15 a 28

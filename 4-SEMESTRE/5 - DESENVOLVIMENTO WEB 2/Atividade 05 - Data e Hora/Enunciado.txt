@@ -1,0 +1,3 @@
+Faça um estudo dirigido, com base em arquivo anexado, para trabalhar com data e hora.
+
+Uso de JavaScript e HTML.

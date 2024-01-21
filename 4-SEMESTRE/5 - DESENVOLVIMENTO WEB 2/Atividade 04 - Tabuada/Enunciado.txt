@@ -1,0 +1,3 @@
+Faça em JavaScript um programa que leia um número e gere a tabuada do número lido.
+
+Uso de HTML e JavaScript.

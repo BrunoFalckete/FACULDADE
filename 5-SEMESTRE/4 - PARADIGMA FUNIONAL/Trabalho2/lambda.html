@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambda</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <h1>Lambda</h1>
+
+    <!-- Explicação e exemplos dos conceitos -->
+    <div class="explanation" id="explanationLambda">
+        <p>
+            A programação com funções lambda envolve o uso de funções anônimas e de curta duração, conhecidas como lambdas. Essas funções são frequentemente empregadas em linguagens que suportam programação funcional, como Python, JavaScript e algumas outras.
+
+            <h3>Aplicações:</h3>
+                - Manipulação de Coleções de Dados (Map, Filter, Reduce)</br>
+                - Expressões Condicionais Simples</br>
+                - Callbacks Concisos em Eventos e Requisições</br>
+                - Programação Funcional em Geral</br>
+                - Redução de Código Boilerplate</br>
+
+            <h3>Vantagens:</h3>
+                - Concisão e Clareza no Código</br>
+                - Redução de Boilerplate</br>
+                - Facilita a Programação Funcional</br>
+                - Suporte a Expressões de Uma Linha</br>
+
+            <h3>Desvantagens:</h3>
+                - Limitações na Complexidade das Funções</br>
+                - Menor Legibilidade em Casos de Lógica Mais Complexa</br>
+                - Dificuldade em Depurar Funções Anônimas</br>
+                - Uso Excessivo Pode Tornar o Código Menos Legível</br></br>
+
+            Em resumo, a programação com funções lambda é útil em situações que demandam concisão e clareza, especialmente em operações de manipulação de dados e expressões condicionais simples. No entanto, é importante equilibrar seu uso para garantir que o código permaneça legível e fácil de manter.
+        </p>
+
+        <h3>Exemplo de Código</h3>
+        <pre>
+        <code>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Definindo uma função de soma usando expressão lambda
+            const soma = (a, b) => a + b;
+
+            // Ação do botão no frontend
+            const button = document.getElementById("myButton");
+            const inputA = document.getElementById("inputA");
+            const inputB = document.getElementById("inputB");
+            const output = document.getElementById("output");
+
+            button.addEventListener("click", () => {
+                // Obtendo valores dos campos de entrada
+                const valorA = parseInt(inputA.value);
+                const valorB = parseInt(inputB.value);
+
+                // Chamada da expressão lambda para realizar a soma
+                const resultadoSoma = soma(valorA, valorB);
+
+                // Exibição do resultado
+                output.textContent = `Resultado da soma: ${resultadoSoma}`;
+            });
+        });
+        </code>
+    </pre>
+    </div>
+
+    <!-- Entradas do usuário -->
+    <div class="explanation" id="explanationLambda">
+        <label for="inputA">Valor de A:</label>
+        <input type="number" id="inputA">
+
+        <label for="inputB">Valor de B:</label>
+        <input type="number" id="inputB">
+
+        <!-- Botão que aciona a operação -->
+        <button id="myButton">Somar</button>
+
+        <!-- Local para exibir o resultado -->
+        <div id="output"></div>
+
+        <!-- Botão para voltar à página index.html -->
+        <button onclick="window.location.href='index.html'">Voltar</button>
+    </div>
+
+    <!-- Importando o script do código JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

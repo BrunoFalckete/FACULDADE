@@ -1,0 +1,19 @@
+PHP Standard Recommendation (PSR)
+
+O framework Laravel segue o padrão de codificação PSR 02, portanto é importante ao menos conhecê-lo. Encaminho dois links (podem olhar outros links também) para pesquisa, e solicito a confecção de um resumo de no mínimo dois parágrafos e no máximo duas páginas, abordando o assunto.
+
+Valendo presença no dia 01/06/2023, quinta-feira.
+
+Obs.: oriento que seria interessante olhar o psr 01, pois o psr 02 é uma melhoria do psr 01, e também o psr 12 que é uma melhoria do psr 02, como desenvolvedores acho legal vocês conhecerem.
+
+Segue os links que acho interessante pesquisarem:
+
+O que são os PSRs do PHP? 
+	https://www.treinaweb.com.br/blog/o-que-sao-as-psrs-do-php/
+PSR-2: Guia de Estilo de Codificação. // esta página é dos idealizadores do PSR
+Qualquer dúvida me contatem (18-98109-2224).
+	https://www.php-fig.org/psr/psr-2/
+
+Boa atividade!
+
+Profa Elisangela

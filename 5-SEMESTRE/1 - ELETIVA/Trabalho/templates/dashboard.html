@@ -1,0 +1,40 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <!-- Inclui o arquivo de estilo CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+    <!-- Formulário para exibição da lista de contas -->
+    <form>
+        <!-- Título da lista -->
+        <h1>Lista de Contas</h1>
+
+        <!-- Lista de contas -->
+        <ul>
+            <!-- Loop através das contas fornecidas -->
+            {% for conta in contas %}
+                <li>
+                    <!-- Exibe informações da conta -->
+                    Descrição: {{ conta.descricao }} / Valor: R${{ conta.valor }} / Data: {{ conta.data.strftime('%d/%m/%Y') }}
+                    <!-- Link para excluir a conta -->
+                    <a href="{{ url_for('excluir_conta', conta_id=conta.id) }}">Excluir</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Botões no formulário -->
+        <!-- Botão para inserir nova conta -->
+        <button type="submit" formaction="{{ url_for('inserir_conta') }}">Inserir Nova Conta</button>
+        <!-- Botão para mostrar gráfico por ano -->
+        <button type="submit" formaction="{{ url_for('mostrar_grafico', ano=2023) }}">Mostrar Gráfico por Ano</button>
+
+        <button type="submit" formaction="{{ url_for('logout') }}" method="post">Logout</button>
+    </form>
+</body>
+
+</html>

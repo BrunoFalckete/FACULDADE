@@ -1,0 +1,12 @@
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: pets_for_home
+    ports:
+      - "5432:5432"

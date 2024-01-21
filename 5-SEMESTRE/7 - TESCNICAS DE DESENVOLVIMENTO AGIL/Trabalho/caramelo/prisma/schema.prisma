@@ -1,0 +1,103 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  cpf      String   @unique
+  name     String   @map("name")
+  phoneNumber String @map("phone_number")
+  birthDate DateTime @map("birth_date")
+  email    String    @map("email") @unique
+  username String    @map("username") @unique
+  password String    @map("password")
+  createdAt DateTime @map("created_at") @default(now())
+  updatedAt DateTime @map("updated_at") @updatedAt
+
+  Address  Address?
+  Pets    Pet[]
+  OrderAdoption OrderAdoption[]
+
+  @@map("users")
+}
+
+model Address {
+  id        Int      @id @default(autoincrement())
+  cep       String   @map("cep")
+  city      String   @map("city")
+  state     String   @map("state")
+  uf        String   @map("uf")
+
+  createdAt DateTime @map("created_at") @default(now())
+  updatedAt DateTime @map("updated_at") @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+
+  userId Int @map("user_id") @unique
+  @@map("addresses")
+}
+
+model Pet {
+  id          Int      @id @default(autoincrement())
+  name        String   @map("name")
+  gender      String   @map("gender")
+  year        Int      @map("year")
+  month       Int      @map("month")
+  kind        KindPet   @map("kind")
+  description String @map("description")
+  user        User     @relation(fields: [userId], references: [id])
+  userId      Int      @map("user_id")
+  adopted     Boolean  @default(false)
+  files       File[]
+  OrderAdoption OrderAdoption[]  
+  @@map("pets")
+}
+
+model File {
+  id        Int      @id @default(autoincrement())
+  fileName  String   @map("file_name")
+  fileType  String   @map("file_type")
+  size      Int      @map("key")
+  url       String   @map("url")
+  createdAt DateTime @map("created_at") @default(now())
+  updatedAt DateTime @map("updated_at") @updatedAt
+  pets      Pet      @relation(fields: [petId], references: [id])
+  petId     Int      @map("pet_id")
+  @@map("files")
+}
+
+model OrderAdoption {
+  id     Int @id @default(autoincrement())
+  pet    Pet @relation(fields: [petId], references: [id])
+  petId  Int @map("pet_id")
+  user   User @relation(fields: [userId], references: [id])
+  userId Int  @map("user_id")
+  text   String @map("text")
+  typeHouse TypeHouse @map("type_house")
+  other  String @map("other")
+  chosen Boolean @default(false)
+
+  createdAt DateTime @map("created_at") @default(now())
+  updatedAt DateTime @map("updated_at") @updatedAt
+}
+
+enum KindPet {
+  DOG
+  CAT
+  BIRD
+  FISH
+  OTHER
+}
+
+enum TypeHouse {
+  HOUSE
+  APARTMENT
+}

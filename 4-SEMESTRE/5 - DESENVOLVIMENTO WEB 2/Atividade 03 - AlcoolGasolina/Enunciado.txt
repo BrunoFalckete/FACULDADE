@@ -1,0 +1,5 @@
+ESTUDO DIRIGIDO
+
+Faça um programa, em JavaScript, para ler valores dos combustíveis álcool e gasolina e informar qual combustível é mais vantajoso abastecer.
+
+Uso de HTML e JavaScript.
